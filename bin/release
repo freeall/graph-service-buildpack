@@ -2,10 +2,10 @@
 
 cat << EOF
 ---
-addons:
-  - shared-database:5mb
 config_vars:
-  PATH: bin:/usr/bin:/bin
+  PATH: "/usr/local/bin:/usr/bin:/bin:/app/vendor/xvfb/bin"
+  LD_LIBRARY_PATH: "/usr/local/lib:/usr/lib:/lib:/app/vendor/xvfb/lib"
+  TMPDIR: "/app/tmp"
 default_process_types:
-  hello: cat hello.txt
+  console: "vendor/xvfb/bin/xvfb"
 EOF
